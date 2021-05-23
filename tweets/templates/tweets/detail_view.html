@@ -1,0 +1,27 @@
+{% extends 'tweets/base.html' %}
+{% load static %}
+{% block container %}
+    <div class="tweet">
+        <div class="user-detail">
+            <div class="user-info">
+                <img src="{% static 'images/user.png' %}" alt="user-avatar" class="user-pic">
+                <h2 class="name"></h2>
+                <p class="username"></p>
+            </div>
+
+            <div class="follow">
+                <input type="submit" name="submit" value="follow" disabled>
+                <a href="{% url 'tweets:detail_tweet' tweet.pk %}" class="detail">view</a>
+                <a href="{% url 'tweets:update_tweet' tweet.pk %}" class="update">edit</a>
+                <a href="{% url 'tweets:delete_tweet' tweet.pk %}" class="delete">delete</a>
+            </div>
+        </div>
+        <h4>{{ tweet.text }}</h4>
+        <div class="tweet-interaction">
+            <a href="#">Love</a>
+            <a href="#">Retweet</a>
+            <p> {{ tweet.date_added }}</p>
+        </div>
+
+    </div>
+{% endblock %}

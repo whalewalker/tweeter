@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweeter</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
+    <script src="https://kit.fontawesome.com/e2052a1ca7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1 class="logo"><a href="/">tweeter</a></h1>
+
+{% block container %}
+{% endblock %}
+
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+</body>
+</html>
